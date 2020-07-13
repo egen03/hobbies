@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Hobbies from './components/Hobbies1';
 
-function App() {
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      hobbyname1: 'Running',
+      description1: 'Using two legs to walk really fast',
+      image1: 'pic1.jpg'
+    }
+  }
+
+render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Hobbies />
+
+      <h2>Hobby 1</h2>
+      <p>Hobby Name: {this.state.hobbyname1}</p>
+      <p>Description: {this.state.description1}</p>
+      <p>Image: {this.state.image1}</p>
+
+     
+       
     </div>
   );
 }
 
+
+
+};
+
 export default App;
+
